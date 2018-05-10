@@ -8,21 +8,18 @@ namespace Dota2ItemEditor
 {
     public class ProjectContext
     {
-        public List<Item> items;
-
         public ProjectContext()
         {
-            items = new List<Item>();
+            Items = new List<Item>();
         }
+        public List<Item> Items { get; }
     }
 
     public class Item
     {
-        private List<IField> _fields;
-
         public Item()
         {
-            _fields = new List<IField>();
+            Fields = new List<IField>();
         }
         public Item(string name)
             : this()
@@ -31,26 +28,26 @@ namespace Dota2ItemEditor
         }
 
         public string Name { get; set; }
+        public List<IField> Fields { get; }
     }
     public interface IField
     {
         string Key { get; set; }
     }
-    public class Map : IField
+    public class TableField : IField
     {
-        private List<IField> _fields;
-
-        public Map()
+        public TableField()
         {
-            _fields = new List<IField>();
+            Fields = new List<IField>();
         }
-        public Map(string key)
+        public TableField(string key)
             : this()
         {
             Key = key;
         }
 
         public string Key { get; set; }
+        public List<IField> Fields { get; }
     }
     public class Field : IField
     {

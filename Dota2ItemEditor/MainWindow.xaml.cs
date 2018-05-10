@@ -20,9 +20,19 @@ namespace Dota2ItemEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ProjectContext _context;
         public MainWindow()
         {
             InitializeComponent();
+            _context = new ProjectContext();
+            this.DataContext = _context;
+            _context.Items.Add(new Item("item_example"));
+            _context.Items[0].Fields.Add(new Field("foo", "bar"));
+            var table = new TableField("table");
+            _context.Items[0].Fields.Add(table);
+            table.Fields.Add(new Field("a", "1"));
+            table.Fields.Add(new Field("b", "2"));
+            table.Fields.Add(new Field("c", "3"));
         }
     }
 }
