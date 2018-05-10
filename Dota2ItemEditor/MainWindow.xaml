@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="Dota 2 Item Editor" Height="450" Width="800">
     <Grid>
-        
+        <TreeView Name="trvItems" ItemsSource="{Binding Items}">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type local:Dota2Item}" ItemsSource="{Binding Fields}">
+                    <TextBlock Text="{Binding Name}" />
+                </HierarchicalDataTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type local:TableField}" ItemsSource="{Binding Fields}">
+                    <TextBlock Text="{Binding Key}" />
+                </HierarchicalDataTemplate>
+                <DataTemplate DataType="{x:Type local:StringField}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Key:" Margin="0,0,20,0"/>
+                        <TextBox Text="{Binding Key}" />
+                        <TextBlock Text="Value:" Margin="40,0,20,0" />
+                        <TextBox Text="{Binding Value}" />
+                    </StackPanel>
+                </DataTemplate>
+            </TreeView.Resources>
+        </TreeView>
     </Grid>
 </Window>

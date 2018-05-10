@@ -10,18 +10,18 @@ namespace Dota2ItemEditor
     {
         public ProjectContext()
         {
-            Items = new List<Item>();
+            Items = new List<Dota2Item>();
         }
-        public List<Item> Items { get; }
+        public List<Dota2Item> Items { get; }
     }
 
-    public class Item
+    public class Dota2Item
     {
-        public Item()
+        public Dota2Item()
         {
             Fields = new List<IField>();
         }
-        public Item(string name)
+        public Dota2Item(string name)
             : this()
         {
             Name = name;
@@ -49,14 +49,14 @@ namespace Dota2ItemEditor
         public string Key { get; set; }
         public List<IField> Fields { get; }
     }
-    public class Field : IField
+    public class StringField : IField
     {
-        public Field() { }
-        public Field(string key)
+        public StringField() { }
+        public StringField(string key)
         {
             Key = key;
         }
-        public Field(string key, string val)
+        public StringField(string key, string val)
             : this(key)
         {
             Value = val;

@@ -26,13 +26,13 @@ namespace Dota2ItemEditor
             InitializeComponent();
             _context = new ProjectContext();
             this.DataContext = _context;
-            _context.Items.Add(new Item("item_example"));
-            _context.Items[0].Fields.Add(new Field("foo", "bar"));
-            var table = new TableField("table");
+            _context.Items.Add(new Dota2Item("item_example"));
+            _context.Items[0].Fields.Add(new StringField("foo", "bar"));
+            var table = new TableField("tableBaz");
             _context.Items[0].Fields.Add(table);
-            table.Fields.Add(new Field("a", "1"));
-            table.Fields.Add(new Field("b", "2"));
-            table.Fields.Add(new Field("c", "3"));
+            table.Fields.Add(new StringField("a", "1"));
+            table.Fields.Add(new StringField("b", "2"));
+            table.Fields.Add(new StringField("c", "3"));
         }
     }
 }
