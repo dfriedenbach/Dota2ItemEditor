@@ -34,5 +34,18 @@ namespace Dota2ItemEditor
             table.Fields.Add(new StringField("b", "2"));
             table.Fields.Add(new StringField("c", "3"));
         }
+
+        public void newItem(string name = "item_new")
+        {
+            if (_context != null)
+            {
+                _context.Items.Add(new Dota2Item(name));
+            }
+        }
+
+        private void NewItem_Click(object sender, RoutedEventArgs e)
+        {
+            newItem();
+        }
     }
 }

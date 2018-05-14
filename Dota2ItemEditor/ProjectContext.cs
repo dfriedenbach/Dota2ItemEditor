@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +11,16 @@ namespace Dota2ItemEditor
     {
         public ProjectContext()
         {
-            Items = new List<Dota2Item>();
+            Items = new ObservableCollection<Dota2Item>();
         }
-        public List<Dota2Item> Items { get; }
+        public ObservableCollection<Dota2Item> Items { get; }
     }
 
     public class Dota2Item
     {
         public Dota2Item()
         {
-            Fields = new List<IField>();
+            Fields = new ObservableCollection<IField>();
         }
         public Dota2Item(string name)
             : this()
@@ -28,7 +29,7 @@ namespace Dota2ItemEditor
         }
 
         public string Name { get; set; }
-        public List<IField> Fields { get; }
+        public ObservableCollection<IField> Fields { get; }
     }
     public interface IField
     {
@@ -38,7 +39,7 @@ namespace Dota2ItemEditor
     {
         public TableField()
         {
-            Fields = new List<IField>();
+            Fields = new ObservableCollection<IField>();
         }
         public TableField(string key)
             : this()
@@ -47,7 +48,7 @@ namespace Dota2ItemEditor
         }
 
         public string Key { get; set; }
-        public List<IField> Fields { get; }
+        public ObservableCollection<IField> Fields { get; }
     }
     public class StringField : IField
     {

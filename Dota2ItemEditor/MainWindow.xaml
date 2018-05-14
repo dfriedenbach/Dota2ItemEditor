@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Dota2ItemEditor"
         mc:Ignorable="d"
         Title="Dota 2 Item Editor" Height="450" Width="800">
-    <Grid>
+    <StackPanel>
         <TreeView Name="trvItems" ItemsSource="{Binding Items}">
             <TreeView.Resources>
                 <HierarchicalDataTemplate DataType="{x:Type local:Dota2Item}" ItemsSource="{Binding Fields}">
@@ -25,5 +25,10 @@
                 </DataTemplate>
             </TreeView.Resources>
         </TreeView>
-    </Grid>
+        <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+            <Button Margin="10" Click="NewItem_Click">
+                <TextBlock Margin="5">New Item</TextBlock>
+            </Button>
+        </StackPanel>
+     </StackPanel>
 </Window>
