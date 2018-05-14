@@ -20,11 +20,11 @@ namespace Dota2ItemEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ProjectContext _context;
+        private MainWindowViewModel _context;
         public MainWindow()
         {
             InitializeComponent();
-            _context = new ProjectContext();
+            _context = new MainWindowViewModel();
             this.DataContext = _context;
             _context.Items.Add(new Dota2Item("item_example"));
             _context.Items[0].Fields.Add(new StringField("foo", "bar"));
@@ -33,19 +33,6 @@ namespace Dota2ItemEditor
             table.Fields.Add(new StringField("a", "1"));
             table.Fields.Add(new StringField("b", "2"));
             table.Fields.Add(new StringField("c", "3"));
-        }
-
-        public void newItem(string name = "item_new")
-        {
-            if (_context != null)
-            {
-                _context.Items.Add(new Dota2Item(name));
-            }
-        }
-
-        private void NewItem_Click(object sender, RoutedEventArgs e)
-        {
-            newItem();
         }
     }
 }

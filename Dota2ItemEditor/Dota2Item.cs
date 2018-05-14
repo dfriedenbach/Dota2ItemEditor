@@ -7,15 +7,6 @@ using System.Threading.Tasks;
 
 namespace Dota2ItemEditor
 {
-    public class ProjectContext
-    {
-        public ProjectContext()
-        {
-            Items = new ObservableCollection<Dota2Item>();
-        }
-        public ObservableCollection<Dota2Item> Items { get; }
-    }
-
     public class Dota2Item
     {
         public Dota2Item()

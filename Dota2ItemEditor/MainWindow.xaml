@@ -26,7 +26,7 @@
             </TreeView.Resources>
         </TreeView>
         <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
-            <Button Margin="10" Click="NewItem_Click">
+            <Button Margin="10" Command="{Binding NewItemCommand}">
                 <TextBlock Margin="5">New Item</TextBlock>
             </Button>
         </StackPanel>
