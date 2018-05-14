@@ -10,17 +10,21 @@
         <TreeView Name="trvItems" ItemsSource="{Binding Items}">
             <TreeView.Resources>
                 <HierarchicalDataTemplate DataType="{x:Type local:Dota2Item}" ItemsSource="{Binding Fields}">
-                    <TextBlock Text="{Binding Name}" />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                        <Button Margin="10,0,0,0" Command="{Binding AddField}">Add Field</Button>
+                        <Button Margin="10,0,0,0" Command="{Binding AddTableField}">Add Table</Button>
+                    </StackPanel>
                 </HierarchicalDataTemplate>
                 <HierarchicalDataTemplate DataType="{x:Type local:TableField}" ItemsSource="{Binding Fields}">
-                    <TextBlock Text="{Binding Key}" />
+                    <TextBlock Text="{Binding Key, UpdateSourceTrigger=PropertyChanged}" />
                 </HierarchicalDataTemplate>
                 <DataTemplate DataType="{x:Type local:StringField}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Key:" Margin="0,0,20,0"/>
-                        <TextBox Text="{Binding Key}" />
+                        <TextBox Text="{Binding Key, UpdateSourceTrigger=PropertyChanged}" />
                         <TextBlock Text="Value:" Margin="40,0,20,0" />
-                        <TextBox Text="{Binding Value}" />
+                        <TextBox Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
                     </StackPanel>
                 </DataTemplate>
             </TreeView.Resources>

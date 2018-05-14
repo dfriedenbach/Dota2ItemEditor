@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command.cs" />
     <Compile Include="Dota2Item.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">
