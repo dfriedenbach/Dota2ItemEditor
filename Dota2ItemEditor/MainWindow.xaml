@@ -11,7 +11,7 @@
             <TreeView.Resources>
                 <HierarchicalDataTemplate DataType="{x:Type local:Dota2Item}" ItemsSource="{Binding Fields}">
                     <StackPanel Orientation="Horizontal">
-                        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox MinWidth="120" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
                         <Button Margin="10,0,0,0" Command="{Binding AddField}">Add Field</Button>
                         <Button Margin="10,0,0,0" Command="{Binding AddTableField}">Add Table</Button>
                     </StackPanel>
@@ -19,7 +19,7 @@
                 <HierarchicalDataTemplate DataType="{x:Type local:TableField}" ItemsSource="{Binding Fields}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Table Key:" Margin="0,0,20,0"/>
-                        <TextBox Text="{Binding Key, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox MinWidth="60" Text="{Binding Key, UpdateSourceTrigger=PropertyChanged}" />
                         <Button Margin="10,0,0,0" Command="{Binding AddField}">Add Field</Button>
                         <Button Margin="10,0,0,0" Command="{Binding AddTableField}">Add Table</Button>
                     </StackPanel>
@@ -27,9 +27,9 @@
                 <DataTemplate DataType="{x:Type local:StringField}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Key:" Margin="0,0,20,0"/>
-                        <TextBox Text="{Binding Key, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox MinWidth="60" Text="{Binding Key, UpdateSourceTrigger=PropertyChanged}" />
                         <TextBlock Text="Value:" Margin="40,0,20,0" />
-                        <TextBox Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox MinWidth="120" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
                     </StackPanel>
                 </DataTemplate>
             </TreeView.Resources>
