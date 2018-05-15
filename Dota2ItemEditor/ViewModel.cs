@@ -44,16 +44,16 @@ namespace Dota2ItemEditor
             Items.Add(new Dota2Item(name));
         }
 
-        private Command _newItemCommand;
-        public ICommand NewItemCommand
+        private Command _newItem;
+        public ICommand NewItem
         {
             get
             {
-                if (_newItemCommand == null)
+                if (_newItem == null)
                 {
-                    _newItemCommand = new Command(param => this.newItem());
+                    _newItem = new Command(param => this.newItem());
                 }
-                return _newItemCommand;
+                return _newItem;
             }
         }
     }

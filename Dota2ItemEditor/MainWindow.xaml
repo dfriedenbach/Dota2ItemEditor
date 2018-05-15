@@ -11,7 +11,7 @@
             <TreeView.Resources>
                 <HierarchicalDataTemplate DataType="{x:Type local:Dota2Item}" ItemsSource="{Binding Fields}">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
                         <Button Margin="10,0,0,0" Command="{Binding AddField}">Add Field</Button>
                         <Button Margin="10,0,0,0" Command="{Binding AddTableField}">Add Table</Button>
                     </StackPanel>
@@ -35,7 +35,7 @@
             </TreeView.Resources>
         </TreeView>
         <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
-            <Button Margin="10" Command="{Binding NewItemCommand}">
+            <Button Margin="10" Command="{Binding NewItem}">
                 <TextBlock Margin="5">New Item</TextBlock>
             </Button>
         </StackPanel>
